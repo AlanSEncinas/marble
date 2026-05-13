@@ -1,4 +1,4 @@
-# Backlog — phase-driven-shipping
+# Backlog — marble
 
 > Destination for ideas that surface during skill development but aren't in the current layer. Items get promoted to `BUILD_PLAN.md` when their phase opens. **Anything in this file is "not now."** Don't open a second front.
 
@@ -12,7 +12,7 @@
 
 ## Layer 3 — Community & Multi-Domain (later)
 
-- **Domain variants of the skill.** A `phase-driven-shipping-data-science` variant with routing rules for notebooks/experiments/papers. A `phase-driven-shipping-content` variant for writers. Same core philosophy, different routing rows.
+- **Domain variants of the skill.** A `marble-data-science` variant with routing rules for notebooks/experiments/papers. A `marble-content` variant for writers. Same core philosophy, different routing rows.
 - **Marketplace submission.** When agentskills.io or similar Claude Code skill marketplaces accept submissions, package this for distribution.
 - **Issue / PR templates** in `.github/`.
 - **Contributing guide** explaining the test-by-pressure-scenario discipline (per `superpowers:writing-skills`).

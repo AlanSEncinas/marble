@@ -1,9 +1,9 @@
-# Build Plan — phase-driven-shipping
+# Build Plan — marble
 
 > Forward-looking source of truth for what ships next on the skill itself. Update checkboxes in the same commit as the work. See `CLAUDE.md` §5 for backward-looking changelog. See `BACKLOG.md` for ideas not in the current layer.
 
 **Current phase:** Layer 2 — Stability & Adoption
-**Today's next action:** User tests fresh-session auto-fire (commit `db092b8`). If it fires → mark below. If not → escalate description.
+**Today's next action:** After this rename commit lands, close Claude Code, rename the local directory `phase-driven-shipping\` → `marble\`, rename the GitHub repo, update the git remote, reopen Claude Code, and verify `marble` fires under its new name.
 
 ---
 
@@ -17,9 +17,9 @@
 - [x] MIT LICENSE — `20f4708`
 - [x] `git init` + first commit on `main` — `20f4708`
 - [x] Fix README install URL (correct GitHub username) — `2913e9b`
-- [x] Push to public repo at github.com/AlanSEncinas/phase-driven-shipping — pushed at session 1
+- [x] Push to GitHub repo at github.com/AlanSEncinas/phase-driven-shipping (later renamed to `marble`) — pushed at session 1
 - [x] Tighten description for reliable auto-fire — `db092b8`
-- [ ] **User-verified:** auto-fire works in a fresh session ← BLOCKING Layer 2
+- [x] **User-verified:** auto-fire works in a fresh session — confirmed 2026-05-12 via Starmap test (fired Case B, routed to brainstorming)
 
 ---
 
@@ -27,10 +27,14 @@
 
 **Done when:** Skill fires reliably across cold and warm starts, has been tested by at least one user other than the author, has a clear demo/example showing the morning-call flow.
 
-- [ ] Confirm auto-fire works after the description fix (manual test by Alan)
-- [ ] If auto-fire still fails: escalate to "MUST invoke before any other tool call" language and re-test
-- [ ] Add a "Quickstart" section to README with a real example session (operator types → skill responds with morning call → operator types "commit" → skill commits + updates docs)
+- [x] Confirm auto-fire works after the description fix (manual test by Alan) — Starmap, 2026-05-12
+- [~] Rebrand: `phase-driven-shipping` → `marble` — files updated 2026-05-12; pending directory rename + GitHub repo rename + remote update + post-rename fire test
+- [ ] After rename: verify `marble` fires under its new name in a fresh session
+- [ ] If post-rename fire fails: diagnose (likely stale Claude Code cache or remote-not-updated) and re-test
+- [ ] Add a "Quickstart" section to README with a real example session (operator types → skill responds with morning call → operator types "commit" → skill commits + updates docs). New README is identity/story-focused; Quickstart is the missing operational walkthrough.
 - [ ] Add screenshots or a short asciinema-style transcript to README so the experience is visible before install
+- [ ] Flip GitHub repo public when polish is complete
+- [ ] Publish the website blog post + LinkedIn post (drafts exist outside repo, holding until public re-launch)
 - [ ] Get one external user to install and run a session — collect feedback on (a) does it fire, (b) is the morning call valuable, (c) any friction points
 - [ ] Address top friction point from external feedback
 
@@ -53,9 +57,9 @@
 
 > Per the skill's own demo-always principle: a working version of the user-facing artifact must exist at every layer.
 
-- **Current demo:** Install via `git clone https://github.com/AlanSEncinas/phase-driven-shipping.git` into `~/.claude/skills/`, restart Claude Code, observe the skill firing. README routing-table + philosophy section is the static demo.
-- **Last verified working:** 2026-05-01 (Layer 1 install + push verified end-to-end; auto-fire pending user test post-`db092b8`)
-- **Gap:** No video / asciinema / animated GIF showing the experience. Layer 2 task.
+- **Current demo:** Install via `git clone https://github.com/AlanSEncinas/marble.git` into `~/.claude/skills/`, restart Claude Code, observe the skill firing. New README (marble-vs-galaxy story + features) is the static demo. Repo is private while polishing — install command works only for Alan until flipped public.
+- **Last verified working:** 2026-05-12 (auto-fire confirmed in Starmap fresh-project test under the old name; post-rename verification pending after directory + repo rename)
+- **Gap:** No video / asciinema / animated GIF showing the experience. Layer 2 task. Also no operational Quickstart in README — only the story/identity copy.
 
 ---
 
@@ -63,4 +67,5 @@
 
 > One-line summary when a layer fully ships. Detail moves to `CLAUDE.md` §5.
 
-- _Layer 1 in progress — pending final auto-fire verification._
+- _Layer 1 — Foundation: SHIPPED 2026-05-12._ Public-shape repo exists, skill installs cleanly, skill auto-fires reliably (verified via Starmap fresh-project test). Layer 1 done definition met.
+- _Layer 2 — Stability & Adoption: IN PROGRESS._ Rebrand to `marble` underway; Quickstart, screenshots, public-flip, and external user feedback still pending.

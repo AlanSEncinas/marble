@@ -1,9 +1,9 @@
 ---
-name: phase-driven-shipping
+name: marble
 description: Use when starting any conversation — REQUIRED to invoke before any other response, including clarifying questions. Also use when user says "commit" / "done for today" / "ship it", when new ideas surface mid-phase, when user expresses self-doubt about progress, or before ending a work session.
 ---
 
-# Phase-Driven Shipping
+# Marble
 
 ## Overview
 
