@@ -7,11 +7,11 @@ description: Use when starting any conversation — REQUIRED to invoke before an
 
 ## Overview
 
-A universal entry-point skill for solo operators and small teams shipping real work. **Project docs are the source of truth** — `BUILD_PLAN.md` is forward-looking, `CLAUDE.md` is backward-looking, `BACKLOG.md` absorbs scope creep. Every session opens with a morning call and closes with one concrete next action. This skill is the conductor; engineering-discipline skills (brainstorming, TDD, debugging, verification) are the orchestra. You only think about the conductor — it routes you to the right sub-skill at the right moment.
+A universal entry-point skill for solo operators and small teams shipping real work. **Project docs are the source of truth** — `BUILD_PLAN.md` is forward-looking, `CLAUDE.md` is backward-looking, `BACKLOG.md` absorbs scope creep. Every session opens with Today's Game Plan and closes with one concrete next action. This skill is the conductor; engineering-discipline skills (brainstorming, TDD, debugging, verification) are the orchestra. You only think about the conductor — it routes you to the right sub-skill at the right moment.
 
 ## When to Use
 
-- **Session start** — run the morning call before any new work
+- **Session start** — run Today's Game Plan before any new work
 - **Trigger words** — "commit" / "done for today" / "ship it" → open auto-commit mode for the session
 - **New idea proposed mid-phase** — triage to `BACKLOG.md`, do not pivot
 - **Self-doubt language** ("this won't work", "nobody cares", "should I bother") → counter with project metrics
@@ -28,9 +28,9 @@ Every project gets these three. If any are missing on first work in a project, p
 | `BUILD_PLAN.md` | Forward-looking live checkboxes by phase/layer | Tick `[x]` in the same commit as the work |
 | `BACKLOG.md` | Destination for ideas not in the current phase, grouped by future phase | When a new idea is triaged |
 
-## Morning Call (start of every session)
+## Today's Game Plan (start of every session)
 
-Before any new work, run the morning call. Behavior depends on what's in the working directory.
+Before any new work, run Today's Game Plan. Behavior depends on what's in the working directory.
 
 **Case A — `BUILD_PLAN.md` exists in the working directory** (you're in a real project):
 
@@ -38,7 +38,7 @@ Before any new work, run the morning call. Behavior depends on what's in the wor
 2. Read last 5 git commits — what shipped?
 3. Read memory — current project state?
 
-Report exactly: **where we are** (1 line) + **what shipped last** (1 line) + **today's concrete next action** (1 line). Stop. No new work begins until the morning call is acknowledged.
+Report exactly: **where we are** (1 line) + **what shipped last** (1 line) + **today's concrete next action** (1 line). Stop. No new work begins until the game plan is acknowledged.
 
 **Case B — no `BUILD_PLAN.md` AND user is starting a real project** (asks to build, plan, design, code something new):
 
@@ -46,7 +46,7 @@ Propose bootstrapping the `BUILD_PLAN.md` / `BACKLOG.md` / `CLAUDE.md` trio from
 
 **Case C — no `BUILD_PLAN.md` AND user has a one-off question or casual request** (asking how something works, asking for an explanation, requesting a small lookup):
 
-Output one short line: *"No project file detected — treating this as a one-off question. Ask anytime if you want me to bootstrap a project structure."* Then answer normally. Do not block. Do not force a morning call where there is no project to call about.
+Output one short line: *"No project file detected — treating this as a one-off question. Ask anytime if you want me to bootstrap a project structure."* Then answer normally. Do not block. Do not force a game plan where there is no project to plan against.
 
 In all three cases: the skill's other rules (trigger words, idea triage, doubt handler, session end) still apply when their conditions are matched.
 

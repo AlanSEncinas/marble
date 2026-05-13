@@ -35,7 +35,7 @@ The key insight: edits made here are *immediately live* (Claude Code reads SKILL
 
 1. Edit `SKILL.md` (or templates) in this directory
 2. **Close Claude Code completely** (the skill registry is read at session start — running sessions cache the old version)
-3. Open Claude Code in any test directory (often best to open a fresh empty folder so case B/C of the morning call gets exercised)
+3. Open Claude Code in any test directory (often best to open a fresh empty folder so case B/C of Today's Game Plan gets exercised)
 4. Send an opening message and observe whether the skill fires
 5. If it fires correctly → commit + push. If not → diagnose, edit, re-test.
 
@@ -45,11 +45,18 @@ The key insight: edits made here are *immediately live* (Claude Code reads SKILL
 
 ## 4. How the skill works (one-paragraph refresher)
 
-The skill is auto-discovered by Claude Code via its description — it lists "Use when..." triggering conditions. When the model sees a matching condition (session start, trigger words, mid-phase ideas, doubt language, session end), it invokes the skill via the `Skill` tool, loads the body, and follows the rules. The body has a routing table that hands off engineering work to the right superpowers skill (brainstorming, TDD, debugging, verification, etc.). The three rules the skill owns directly: morning call (session bookend), idea triage (BACKLOG), commit discipline (phase-prefixed messages, same-session doc updates).
+The skill is auto-discovered by Claude Code via its description — it lists "Use when..." triggering conditions. When the model sees a matching condition (session start, trigger words, mid-phase ideas, doubt language, session end), it invokes the skill via the `Skill` tool, loads the body, and follows the rules. The body has a routing table that hands off engineering work to the right superpowers skill (brainstorming, TDD, debugging, verification, etc.). The three rules the skill owns directly: Today's Game Plan (session bookend), idea triage (BACKLOG), commit discipline (phase-prefixed messages, same-session doc updates).
 
 ---
 
 ## 5. Recently shipped
+
+**2026-05-12 — `Layer 2 terminology`: rename "Morning call" → "Today's Game Plan"**
+- UX terminology change to the session-start ritual. No behavioral rule changed — still 3 lines (where we are / what shipped / next action), still the 3-case A/B/C dispatch on `BUILD_PLAN.md` presence, still blocks new work until acknowledged.
+- Triggered by a real-session observation: a "5/11/26 10:34pm" opener exposed that "morning call" has a time-of-day bias that breaks immersion for night-work. "Today's Game Plan" is time-agnostic and reads more like solo-operator language.
+- Scope: forward-facing text only. Updated SKILL.md (§Overview, When to Use, section heading + body, Case C language), README.md (feature description), BUILD_PLAN.md (Quickstart task + external-user-feedback question), BACKLOG.md (the "why not a hook" rationale entry), and CLAUDE.md §3 testing protocol + §4 refresher.
+- Out of scope (intentionally preserved as historical record): §5 changelog entries that shipped *under the name* "morning call" — they describe what existed at that time and shouldn't be rewritten.
+- `superpowers:writing-skills` handoff skipped intentionally — it's built for designing rules + adversarial testing, not copy-edits.
 
 **2026-05-12 — `Layer 2 rebrand`: phase-driven-shipping → marble**
 - Renamed the skill from `phase-driven-shipping` to `marble`. Identity rebrand around the "marble vs galaxy" metaphor: every session anchored to one phase (the marble) rather than the full project (the galaxy), so complexity doesn't become paralysis.

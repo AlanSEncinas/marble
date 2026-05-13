@@ -18,7 +18,7 @@ It builds on the [superpowers](https://agentskills.io) skill suite for the engin
 
 ### What it does
 
-**Morning call.** Every session opens with three lines: where you are, what shipped last, what's next. No new work starts until that's acknowledged. It sounds simple. It changes everything.
+**Today's Game Plan.** Every session opens with three lines: where you are, what shipped last, what's next. No new work starts until that's acknowledged. It sounds simple. It changes everything.
 
 **Phase discipline.** Work splits into explicit layers with done definitions. New ideas that surface mid-session get triaged to a backlog instead of opening a second front. You stay on the marble. The galaxy waits.
 

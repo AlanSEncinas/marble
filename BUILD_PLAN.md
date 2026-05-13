@@ -30,11 +30,11 @@
 - [x] Confirm auto-fire works after the description fix (manual test by Alan) — Starmap, 2026-05-12
 - [x] Rebrand: `phase-driven-shipping` → `marble` — files + directory + GitHub repo + remote all renamed; commit `1225493` (2026-05-12)
 - [x] After rename: verify `marble` fires under its new name in a fresh session — confirmed 2026-05-12
-- [ ] Add a "Quickstart" section to README with a real example session (operator types → skill responds with morning call → operator types "commit" → skill commits + updates docs). New README is identity/story-focused; Quickstart is the missing operational walkthrough.
+- [ ] Add a "Quickstart" section to README with a real example session (operator types → skill responds with Today's Game Plan → operator types "commit" → skill commits + updates docs). New README is identity/story-focused; Quickstart is the missing operational walkthrough.
 - [ ] Add screenshots or a short asciinema-style transcript to README so the experience is visible before install
 - [ ] Flip GitHub repo public when polish is complete
 - [ ] Publish the website blog post + LinkedIn post (drafts exist outside repo, holding until public re-launch)
-- [ ] Get one external user to install and run a session — collect feedback on (a) does it fire, (b) is the morning call valuable, (c) any friction points
+- [ ] Get one external user to install and run a session — collect feedback on (a) does it fire, (b) is Today's Game Plan valuable, (c) any friction points
 - [ ] Address top friction point from external feedback
 
 ---

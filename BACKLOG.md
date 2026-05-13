@@ -35,4 +35,4 @@
 
 - **Megaskill (squash superpowers + this into one giant SKILL.md).** Decided against on 2026-05-01 — would break upstream updates from Anthropic, balloon load tokens 5-10x, and lose the testing/maintenance leverage that comes from superpowers being a separately-maintained skill suite. The router pattern (current implementation) gives the same single-front-door feel without the cost. See conversation-1 design notes if reasoning needs revisiting.
 - **Forking superpowers entirely into AlanSEncinas namespace.** Same reasoning as above — high ongoing maintenance burden, no real benefit.
-- **A "morning call" Claude Code hook.** Tempting (would force the morning call to fire every session via settings.json), but hooks run regardless of context and would annoy on casual / one-off conversations. Skill-based auto-fire with the 3-case morning call (A/B/C) handles this better.
+- **A "Today's Game Plan" Claude Code hook.** Tempting (would force Today's Game Plan to fire every session via settings.json), but hooks run regardless of context and would annoy on casual / one-off conversations. Skill-based auto-fire with the 3-case game plan (A/B/C) handles this better.
