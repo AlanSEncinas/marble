@@ -3,7 +3,7 @@
 > Forward-looking source of truth for what ships next on the skill itself. Update checkboxes in the same commit as the work. See `CLAUDE.md` §5 for backward-looking changelog. See `BACKLOG.md` for ideas not in the current layer.
 
 **Current phase:** Layer 2 — Stability & Adoption
-**Today's next action:** After this rename commit lands, close Claude Code, rename the local directory `phase-driven-shipping\` → `marble\`, rename the GitHub repo, update the git remote, reopen Claude Code, and verify `marble` fires under its new name.
+**Today's next action:** Write the README "Quickstart" section — a real example session showing the morning call + a "commit" trigger flow, so first-time installers see the experience before they install.
 
 ---
 
@@ -28,9 +28,8 @@
 **Done when:** Skill fires reliably across cold and warm starts, has been tested by at least one user other than the author, has a clear demo/example showing the morning-call flow.
 
 - [x] Confirm auto-fire works after the description fix (manual test by Alan) — Starmap, 2026-05-12
-- [~] Rebrand: `phase-driven-shipping` → `marble` — files updated 2026-05-12; pending directory rename + GitHub repo rename + remote update + post-rename fire test
-- [ ] After rename: verify `marble` fires under its new name in a fresh session
-- [ ] If post-rename fire fails: diagnose (likely stale Claude Code cache or remote-not-updated) and re-test
+- [x] Rebrand: `phase-driven-shipping` → `marble` — files + directory + GitHub repo + remote all renamed; commit `1225493` (2026-05-12)
+- [x] After rename: verify `marble` fires under its new name in a fresh session — confirmed 2026-05-12
 - [ ] Add a "Quickstart" section to README with a real example session (operator types → skill responds with morning call → operator types "commit" → skill commits + updates docs). New README is identity/story-focused; Quickstart is the missing operational walkthrough.
 - [ ] Add screenshots or a short asciinema-style transcript to README so the experience is visible before install
 - [ ] Flip GitHub repo public when polish is complete
@@ -68,4 +67,4 @@
 > One-line summary when a layer fully ships. Detail moves to `CLAUDE.md` §5.
 
 - _Layer 1 — Foundation: SHIPPED 2026-05-12._ Public-shape repo exists, skill installs cleanly, skill auto-fires reliably (verified via Starmap fresh-project test). Layer 1 done definition met.
-- _Layer 2 — Stability & Adoption: IN PROGRESS._ Rebrand to `marble` underway; Quickstart, screenshots, public-flip, and external user feedback still pending.
+- _Layer 2 — Stability & Adoption: IN PROGRESS._ Rebrand to `marble` shipped (`1225493`, 2026-05-12) and verified firing under the new name; Quickstart, screenshots, public-flip, and external user feedback still pending.

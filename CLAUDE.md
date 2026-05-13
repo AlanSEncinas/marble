@@ -57,7 +57,7 @@ The skill is auto-discovered by Claude Code via its description — it lists "Us
 - README.md fully rewritten: story-first ("builders who spiral"), personal context (solo operator, 14 markets), feature descriptions in plain language. Replaces the previous philosophy-first version.
 - All internal references in CLAUDE.md / BUILD_PLAN.md / BACKLOG.md updated.
 - Drafts of a website blog post ("I Built a Dev Skill to Stop My Own Brain from Sabotaging My Work") and a LinkedIn announcement exist outside this repo — not active yet, holding until public re-launch is ready.
-- Pending user actions after this commit: close Claude Code, rename local directory `phase-driven-shipping\` → `marble\`, rename GitHub repo to `marble`, run `git remote set-url origin https://github.com/AlanSEncinas/marble.git`, reopen Claude Code, verify the renamed skill fires.
+- Commit `1225493` lands the file changes. Follow-up actions (local dir rename, GitHub repo rename, `git remote set-url`, post-rename auto-fire verification) all completed same day, 2026-05-12. Layer 2 rebrand item in `BUILD_PLAN.md` ticked.
 
 **2026-05-12 — `Layer 1 verified`: auto-fire confirmed in fresh project**
 - User opened Claude Code in a clean `Starmap/` directory with only an empty `idea` file. The skill fired correctly and routed to Case B of the morning call (no `BUILD_PLAN.md` + real-project intent → hand off to `superpowers:brainstorming` before scaffolding). This closes the open verification item from the `db092b8` description fix. Layer 1 is fully shipped.
