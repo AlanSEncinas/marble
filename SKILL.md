@@ -139,22 +139,37 @@ Forbidden: vague messages like "updates", "fixes", "wip", "stuff".
 
 **Session end ritual.** Every session closes with one specific, concrete next action written down — in `BUILD_PLAN.md`, a TODO comment, or memory. Ambiguity feeds doubt. *"Tomorrow: do X"* is valid. *"We made progress"* is not.
 
-When the user triggers wrap (`ship it` / `done for today` / explicit wrap), output the session summary in this format:
+When the user triggers wrap (`ship it` / `done for today` / explicit wrap), output a **state snapshot** in this format (US date `M/D/YY`):
 
 ```
-Session wrap.
+Session closed cleanly — [date]. Final state:
 
-| Shipped this session | Where |
-|----------------------|-------|
-| [Commit subject 1]   | [files/scope] |
-| [Commit subject 2]   | [files/scope] |
+| Item | Status |
+|------|--------|
+| Branch | [name] @ [hash], [push state], [merge state] |
+| Tests | [count] green / [count] failing  (omit row if project has no tests) |
+| [Project-specific row] | [status — only material changes from this session] |
+| [...] | [...] |
 
-Next:
-- [One concrete next action — required]
-- [Optional follow-up items]
+**Concrete next action for tomorrow** (written down per marble session-end ritual):
+
+`[literal command or actionable step in a code block, copy-pasteable]`
+
+[Optional one-line honest read — only when there's something substantive worth saying.]
 ```
 
-The "Next" list must include at least one specific actionable item. If working tree is dirty or local is ahead of origin, note it explicitly in the summary. Skip the table only if zero commits shipped this session — then the wrap is just the "Next" bullets and any state notes.
+**Required commands to gather state before writing the wrap:** `git status` + `git log origin/[branch]..HEAD --oneline` (branch / push state) + the project's test command if recently run or trivially re-runnable. Don't guess values — verify them.
+
+**Row selection:**
+- **Always include:** Branch (with push/merge state). Tests row (if project has tests).
+- **Conditional rows:** add for anything material that changed this session — artifacts created, experiments run, gates passed/failed/killed, deploys, feature flags ramped, anything frozen-for-later. Match what's actually relevant to *this* project's domain.
+- **Don't pad with empty rows.** The snapshot is "what's currently true," not a comprehensive checklist.
+
+**Concrete next action:** in a code block so it's copy-pasteable. Literal command or step, not a vague intention.
+
+**Honest read:** optional. Include only when the session has substance worth reflecting on (caught a bug, shipped something hard, surfaced a key insight). Skip when forced — performative warmth is worse than silence.
+
+**Why this shape — the design intent.** The wrap is a *state snapshot* (where things stand now), not an action log (what shipped — that's the morning's job). Tomorrow-you doesn't need yesterday's commit subjects; git log has those. Tomorrow-you needs to know what's pushed, what's blocking, and the literal next command to run. The format is also part of marble's anti-doubt architecture: concrete state replaces the vague "we made progress" with facts (pairs with the Doubt handler rule), and the honest-read line names real accomplishments explicitly when they exist (counter to the "did I do anything today" spiral).
 
 ## Red Flags — STOP
 
