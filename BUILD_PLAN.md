@@ -3,7 +3,7 @@
 > Forward-looking source of truth for what ships next on the skill itself. Update checkboxes in the same commit as the work. See `CLAUDE.md` §5 for backward-looking changelog. See `BACKLOG.md` for ideas not in the current layer.
 
 **Current phase:** Layer 2 — Stability & Adoption
-**Today's next action:** Use marble across more real sessions (TT orchestrator, Starmap, any active project) before writing Quickstart copy — the canonical example transcript should be grounded in real usage patterns, not a guess. Collect notes on what feels load-bearing vs friction. Quickstart section comes after that lived-in pass.
+**Today's next action:** Continue using marble in real sessions with the new rules in place (A1 spec-exists override on brainstorming, A2 workflow-blockers-override-phase). Watch how the two new rules play out under pressure. After that lived-in pass with the refined rules, write the README Quickstart section. True external user feedback (someone other than Alan) still pending.
 
 ---
 

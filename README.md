@@ -54,7 +54,7 @@ cd "$env:USERPROFILE\.claude\skills"
 git clone https://github.com/AlanSEncinas/marble.git
 ```
 
-Requires Claude Code and the [superpowers](https://agentskills.io) plugin for the engineering handoffs.
+Requires Claude Code. Pairs with the [superpowers](https://agentskills.io) plugin for the engineering handoffs — marble works standalone, but brainstorming, planning, TDD, debugging, and verification fall back to model defaults instead of the disciplined superpowers versions. Install both for the full experience.
 
 ### Adapting it
 

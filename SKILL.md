@@ -73,6 +73,8 @@ This skill routes engineering work to the right superpowers skill. **Do not skip
 
 If a situation matches a routing-table row, invoke the named sub-skill *before* doing the work. The handoff is not optional.
 
+**Spec-exists override on the brainstorming row.** If a behavior change has a written design already specified (BACKLOG entry, operator's report, prior session's plan, written ticket, the user's own spec in chat), skip `superpowers:brainstorming` and route directly to `superpowers:writing-plans` or `superpowers:test-driven-development`. The gate is *"does a written spec exist?"* — not *"is this small?"* Brainstorming exists to *produce* a spec; if one already exists, the ceremony is redundant and slows shipping. This override only applies to the brainstorming handoff — TDD, verification, and other routing rows still apply.
+
 ## Phase-Driven Discipline
 
 **Layered ship definition.** Work splits into explicit layers (e.g., Layer 1 Foundation → Layer 2 Real Ship → Layer 3 Validation). Each has a one-sentence done definition pinned in `BUILD_PLAN.md`. When new work is proposed, first ask: *"is this in the current layer?"* If not → BACKLOG.
@@ -85,6 +87,8 @@ If a situation matches a routing-table row, invoke the named sub-skill *before* 
 3. Redirect: "Right now we're on [task]. Continuing."
 
 Never open a second front. Finish the current phase before starting the next.
+
+**Workflow blockers override the phase rule.** A broken UI, failing build, broken-looking demo, or anything actively blocking the next concrete step is *not* an idea — it's a blocker. Don't triage a blocker to BACKLOG. Fix it, then return to phase. Idea triage discipline applies to *new ideas*, not to obstacles preventing forward motion on the current phase. If the user says "just fix the blocker," that's the documented norm, not an exception.
 
 **Demo-always.** If the project has a user-facing artifact (web app, notebook, report), there must be a working version of it at every layer. Never be in a "can't show this yet" position. v0 ships before v1 starts.
 
@@ -146,7 +150,7 @@ For `CLAUDE.md`, follow the standard pattern: sections for project overview, tec
 
 This skill is the front door. Engineering work is delegated to:
 
-- `superpowers:brainstorming` — REQUIRED before any new feature or behavior change
+- `superpowers:brainstorming` — REQUIRED before any new feature or behavior change *without* a written spec. Skip when a written spec already exists (see Spec-exists override in the Routing Table section).
 - `superpowers:writing-plans` — REQUIRED for multi-step tasks before touching code
 - `superpowers:test-driven-development` — REQUIRED while implementing code
 - `superpowers:systematic-debugging` — REQUIRED on any bug or test failure
