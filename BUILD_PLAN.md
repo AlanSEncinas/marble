@@ -3,7 +3,7 @@
 > Forward-looking source of truth for what ships next on the skill itself. Update checkboxes in the same commit as the work. See `CLAUDE.md` §5 for backward-looking changelog. See `BACKLOG.md` for ideas not in the current layer.
 
 **Current phase:** Layer 2 — Stability & Adoption
-**Today's next action:** Continue using marble in real sessions with the new rules in place (A1 spec-exists override on brainstorming, A2 workflow-blockers-override-phase). Watch how the two new rules play out under pressure. After that lived-in pass with the refined rules, write the README Quickstart section. True external user feedback (someone other than Alan) still pending.
+**Today's next action:** Continue using marble in real sessions with all the new rules in place (A1 spec-exists override, A2 workflow-blockers override, A3b honest superpowers dependency, plus the new Case A morning + session wrap table-and-bullets format from 2026-05-20). Watch how the format change plays out across multiple sessions. After lived-in pass with the refined rules and format, write the README Quickstart section using a real recent session as the example. True external user feedback (someone other than Alan) still pending.
 
 ---
 

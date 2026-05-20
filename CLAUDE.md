@@ -51,6 +51,15 @@ The skill is auto-discovered by Claude Code via its description — it lists "Us
 
 ## 5. Recently shipped
 
+**2026-05-20 — `Layer 2 UX`: Today's Game Plan + session wrap adopt table-and-bullets format (Case A only)**
+- Format change to how marble *presents* the session bookends. No discipline rule changed: still 3-line equivalent content (where we are / what shipped / next action), still blocks new work until acknowledged, still requires at least one concrete next action.
+- Triggered by direct user observation: Alan saw both the terse 3-line morning call AND the table-style "What landed this session" summary I produced at session wrap (commit `00f0a7e`), and stated the table format was easier to scan and more presentable. Strongest possible RED signal — the user himself comparing formats in-session.
+- New format for Case A morning call: "Hello — today is M/D/YY. [Phase line]" header + Shipped-since-last-session table (3-5 most recent commits with dates) + "Today's focus:" bullet list (lead with primary next action).
+- New format for session wrap (triggers `ship it` / `done for today` / explicit wrap): "Session wrap." + Shipped-this-session table (commit subject + files/scope) + "Next:" bullet list (one concrete action required).
+- Cases B and C deliberately unchanged — they stay lightweight. Case B has no project data yet (table would be empty placeholders); Case C is a casual one-off where a table would be ceremony. Same principle as the A1 spec-exists rule on a different surface: only invoke the heavier format when there's something to populate.
+- Date format: US (`5/20/26`). Matches Alan's own opener convention this session.
+- `superpowers:writing-skills` handoff skipped — this is a presentation-format change, not a discipline-rule change. Same logic as the "Morning call" → "Today's Game Plan" rename (2026-05-12). The skill suite is built for rule design + adversarial testing, not output formatting.
+
 **2026-05-20 — `Layer 2 rules`: spec-exists override + workflow-blockers override + honest superpowers dependency**
 - Three connected changes driven by 8 days of real-session usage feedback from another Claude running marble in Alan's actual project work.
 - **A1 — Spec-exists override on the brainstorming handoff (SKILL.md routing table).** Real-session failure mode observed: the other Claude invoked `superpowers:brainstorming` for a one-line URL polish that was already designed in BACKLOG, and for an EPCO gating fix where the user had already specified the design. Ceremony where none was warranted. New rule: if a written design exists (BACKLOG entry, operator's report, prior session's plan, written ticket, user's own spec), skip brainstorm and route directly to `writing-plans` or TDD. The gate is *"does a written spec exist?"* — not *"is this small?"* — which keeps a written-spec requirement intact while removing the loophole.

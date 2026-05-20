@@ -38,7 +38,22 @@ Before any new work, run Today's Game Plan. Behavior depends on what's in the wo
 2. Read last 5 git commits — what shipped?
 3. Read memory — current project state?
 
-Report exactly: **where we are** (1 line) + **what shipped last** (1 line) + **today's concrete next action** (1 line). Stop. No new work begins until the game plan is acknowledged.
+Output in this format (US date `M/D/YY`):
+
+```
+Hello — today is [date]. [Phase line, e.g. "Layer 2 — Stability & Adoption"]
+
+| Shipped since last session | When |
+|----------------------------|------|
+| [Commit subject 1]          | [date] |
+| [Commit subject 2]          | [date] |
+
+Today's focus:
+- [Primary next action from BUILD_PLAN.md]
+- [Optional sub-tasks or related context]
+```
+
+Stop. No new work begins until the game plan is acknowledged. The "Today's focus" list must include at least one concrete next action — *"we made progress"* is never a valid game-plan focus line. Show only the most recent 3-5 commits in the Shipped table (filter for what's actually new since last session — if it's been a long gap, summarize older work as one row "...and N earlier commits").
 
 **Case B — no `BUILD_PLAN.md` AND user is starting a real project** (asks to build, plan, design, code something new):
 
@@ -123,6 +138,23 @@ Forbidden: vague messages like "updates", "fixes", "wip", "stuff".
 **Memory hygiene.** Save: user role / working style / ambitions, project goals and "why" decisions, feedback rules with **Why:** + **How to apply:** lines. Don't save: code patterns (read the code), recent changes (read git log), in-progress task state (use `BUILD_PLAN.md`).
 
 **Session end ritual.** Every session closes with one specific, concrete next action written down — in `BUILD_PLAN.md`, a TODO comment, or memory. Ambiguity feeds doubt. *"Tomorrow: do X"* is valid. *"We made progress"* is not.
+
+When the user triggers wrap (`ship it` / `done for today` / explicit wrap), output the session summary in this format:
+
+```
+Session wrap.
+
+| Shipped this session | Where |
+|----------------------|-------|
+| [Commit subject 1]   | [files/scope] |
+| [Commit subject 2]   | [files/scope] |
+
+Next:
+- [One concrete next action — required]
+- [Optional follow-up items]
+```
+
+The "Next" list must include at least one specific actionable item. If working tree is dirty or local is ahead of origin, note it explicitly in the summary. Skip the table only if zero commits shipped this session — then the wrap is just the "Next" bullets and any state notes.
 
 ## Red Flags — STOP
 
