@@ -3,7 +3,7 @@
 > Forward-looking source of truth for what ships next on the skill itself. Update checkboxes in the same commit as the work. See `CLAUDE.md` §5 for backward-looking changelog. See `BACKLOG.md` for ideas not in the current layer.
 
 **Current phase:** Layer 2 — Stability & Adoption
-**Today's next action:** Continue using marble in real sessions with all the new rules in place (A1 spec-exists override, A2 workflow-blockers override, A3b honest superpowers dependency, plus the new Case A morning + session wrap table-and-bullets format from 2026-05-20). Watch how the format change plays out across multiple sessions. After lived-in pass with the refined rules and format, write the README Quickstart section using a real recent session as the example. True external user feedback (someone other than Alan) still pending.
+**Today's next action:** Open Claude Code in any active project with a `BUILD_PLAN.md` (e.g., Trend Tents orchestrator). Verify the patched Case A morning surfaces the `Today's next action:` line **verbatim, not paraphrased**, and that the bookend bridge works end-to-end (yesterday's wrap line is what shows up as today's first focus item). Also pressure-test the new Case B announce-and-act behavior in a fresh-project dir. If lived-in usage surfaces a rule gap or wording defect, patch marble first thing — same RED → GREEN pattern we ran today (3 commits: `0d057aa` bookend persistence, `8ab728e` onboarding pass, `80f9e18` README refresh).
 
 ---
 
