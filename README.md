@@ -18,7 +18,7 @@ It builds on the [superpowers](https://agentskills.io) skill suite for the engin
 
 ### What it does
 
-**Today's Game Plan.** Every session opens with three lines: where you are, what shipped last, what's next. No new work starts until that's acknowledged. It sounds simple. It changes everything.
+**Today's Game Plan.** Every session opens with a quick orientation — recent shipped work in a table, plus your next action picked up verbatim from the previous session's wrap. No new work starts until that's acknowledged. Start any session by typing `hello`, `morning`, `morning [date]`, or `hi today is [date]` — any of those triggers the game plan. It sounds simple. It changes everything.
 
 **Phase discipline.** Work splits into explicit layers with done definitions. New ideas that surface mid-session get triaged to a backlog instead of opening a second front. You stay on the marble. The galaxy waits.
 
@@ -28,15 +28,17 @@ It builds on the [superpowers](https://agentskills.io) skill suite for the engin
 
 **Backlog triage.** Mid-phase idea? Acknowledged in one line, logged to BACKLOG.md, session continues. The idea doesn't disappear. The current phase doesn't either.
 
-**Session close.** Every session ends with one concrete next action written down. "We made good progress" is not a valid close. Ambiguity feeds doubt.
+**Session close.** Type `done for today` or `ship it` and the skill writes a state snapshot — what's pushed, what's frozen, what's blocked — plus a concrete next action for tomorrow that gets persisted into your `BUILD_PLAN.md` so the next session picks it up verbatim. The two halves of the session bookend bridge through that file. "We made good progress" is not a valid close. Ambiguity feeds doubt.
 
 ### The three files
 
 Every project gets a trio:
 
-- `BUILD_PLAN.md` — forward-looking, live checkboxes by phase. The source of truth for what's done.
+- `BUILD_PLAN.md` — forward-looking, live checkboxes by phase. The source of truth for what's done. Also carries the wrap → morning handoff line that yesterday's session writes for today's session to pick up.
 - `CLAUDE.md` — backward-looking architecture reference with a dated changelog. Updated in the same session as the change.
 - `BACKLOG.md` — where ideas live when they're not in the current phase.
+
+Open Claude Code in a new project directory and the skill notices the files are missing — it announces what it's about to do, creates the trio from the marble templates, and teaches you the session-start trigger phrases inline. No setup ceremony. Just open and go.
 
 Memory fails. Chat history disappears. The files don't.
 
