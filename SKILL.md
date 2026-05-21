@@ -12,7 +12,8 @@ A universal entry-point skill for solo operators and small teams shipping real w
 ## When to Use
 
 - **Session start** — run Today's Game Plan before any new work
-- **Trigger words** — "commit" / "done for today" / "ship it" → open auto-commit mode for the session
+- **Session-start trigger phrases** — `hello` / `hi today is [date]` / `morning [date]` / `morning` → explicitly invoke Today's Game Plan (routes to Case A / B / C depending on directory state)
+- **Auto-commit trigger words** — `commit` / `done for today` / `ship it` → open auto-commit mode for the session
 - **New idea proposed mid-phase** — triage to `BACKLOG.md`, do not pivot
 - **Self-doubt language** ("this won't work", "nobody cares", "should I bother") → counter with project metrics
 - **Session wrap** — never end without a written next action
@@ -57,13 +58,31 @@ Stop. No new work begins until the game plan is acknowledged.
 
 **The first focus item MUST be the `Today's next action:` line from BUILD_PLAN.md, verbatim.** Do not paraphrase, summarize, or rewrite it — that breaks the bookend with the previous session's wrap. If the line is stale or wrong (project shifted, blocker appeared, the user pastes a different recent wrap), surface it verbatim *and then* note the shift as the second focus item. The "Recently shipped" table is a state snapshot of the most recent 3-5 commits, not a session delta — do not label these as "new since last session." If it's been a long gap, summarize older work as one row "...and N earlier commits". *"We made progress"* is never a valid focus item.
 
-**Case B — no `BUILD_PLAN.md` AND user is starting a real project** (asks to build, plan, design, code something new):
+**Case B — no `BUILD_PLAN.md` AND signals of project intent** (any of: user explicitly asks to build / plan / design / code something new; project-flavored artifacts visible in the working directory or IDE — `idea.md`, `src/`, `package.json`, `*.ipynb`, an existing `README.md` describing a real project, etc.; user opens Claude Code in a directory that clearly isn't a casual scratch space):
 
-Propose bootstrapping the `BUILD_PLAN.md` / `BACKLOG.md` / `CLAUDE.md` trio from the templates in this skill's directory before any work begins.
+**Announce and act — do not ask permission.** Output:
 
-**Case C — no `BUILD_PLAN.md` AND user has a one-off question or casual request** (asking how something works, asking for an explanation, requesting a small lookup):
+```
+Hi — I noticed this is a new project. I don't see `BUILD_PLAN.md`, `BACKLOG.md`, or `CLAUDE.md` yet, so I'm going to create them from the marble templates.
 
-Output one short line: *"No project file detected — treating this as a one-off question. Ask anytime if you want me to bootstrap a project structure."* Then answer normally. Do not block. Do not force a game plan where there is no project to plan against.
+Moving forward, you can start any session by saying any of:
+- `hello`
+- `hi today is [date]`
+- `morning [date]`
+- `morning`
+
+Any of those triggers Today's Game Plan and gets us oriented for the day.
+
+Creating the files now.
+```
+
+Then immediately create the three files: copy `BUILD_PLAN.template.md` and `BACKLOG.template.md` from this skill's directory into the project root (renamed to `BUILD_PLAN.md` / `BACKLOG.md`); generate a minimal `CLAUDE.md` stub following the standard pattern (project overview placeholder, dated "Recently shipped" section, maintenance protocol). After the files exist, confirm in one short line ("Files created. What are we building?") and route to the appropriate engineering skill per the Routing Table — for a brand-new project that's `superpowers:brainstorming` unless the user already pasted a written spec (then spec-exists override applies → `superpowers:writing-plans`).
+
+The announce-and-act posture is deliberate: when project intent is visible, the trio is a known precondition for everything else marble does, so asking permission is ceremony. The operator can always tell us to undo if they wanted a different shape.
+
+**Case C — no `BUILD_PLAN.md` AND no project signals AND user has a one-off question or casual request** (asking how something works, asking for an explanation, requesting a small lookup, in a directory with no visible project artifacts):
+
+Output one short line: *"No project file detected — treating this as a one-off question. Ask anytime if you want me to bootstrap a project structure."* Then answer normally. Do not block. Do not force a game plan where there is no project to plan against. (Case C is the narrow case: bare directory, casual ask. The moment a project signal appears, you're in Case B.)
 
 In all three cases: the skill's other rules (trigger words, idea triage, doubt handler, session end) still apply when their conditions are matched.
 

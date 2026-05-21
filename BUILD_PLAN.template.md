@@ -3,7 +3,7 @@
 > Forward-looking source of truth for what ships next. Update checkboxes in the same commit as the work. See `CLAUDE.md` for backward-looking architecture + changelog. See `BACKLOG.md` for ideas that don't fit the current phase.
 
 **Current phase:** Layer 1 Foundation
-**Today's next action:** _(replace before any new work begins)_
+**Today's next action:** _(this line is the wrap → morning handoff — overwritten by each session's wrap with tomorrow's concrete pickup command, and surfaced verbatim by Today's Game Plan. Replace this placeholder before the first session ends.)_
 
 ---
 
