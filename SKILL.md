@@ -34,26 +34,28 @@ Before any new work, run Today's Game Plan. Behavior depends on what's in the wo
 
 **Case A — `BUILD_PLAN.md` exists in the working directory** (you're in a real project):
 
-1. Read `BUILD_PLAN.md` — what phase / current task?
-2. Read last 5 git commits — what shipped?
-3. Read memory — current project state?
+1. Read `BUILD_PLAN.md` — what phase / current task, **and what is the `Today's next action:` line verbatim?** That line is the handoff from the previous session's wrap (per the Session end ritual below); it is the canonical pickup point for today, not a paraphrase target.
+2. Read last 3-5 git commits — recent project activity (state snapshot, not a session delta — there is no reliable signal for where the prior session boundary fell from inside the morning rule).
+3. Read memory — current project state.
 
 Output in this format (US date `M/D/YY`):
 
 ```
 Hello — today is [date]. [Phase line, e.g. "Layer 2 — Stability & Adoption"]
 
-| Shipped since last session | When |
-|----------------------------|------|
-| [Commit subject 1]          | [date] |
-| [Commit subject 2]          | [date] |
+| Recently shipped | When |
+|------------------|------|
+| [Commit subject 1] | [date] |
+| [Commit subject 2] | [date] |
 
 Today's focus:
-- [Primary next action from BUILD_PLAN.md]
-- [Optional sub-tasks or related context]
+- **[Verbatim `Today's next action:` line from BUILD_PLAN.md — this is the handoff from last session's wrap]**
+- [Optional second item: note on what may have shifted since the handoff was written, related context, or sub-tasks]
 ```
 
-Stop. No new work begins until the game plan is acknowledged. The "Today's focus" list must include at least one concrete next action — *"we made progress"* is never a valid game-plan focus line. Show only the most recent 3-5 commits in the Shipped table (filter for what's actually new since last session — if it's been a long gap, summarize older work as one row "...and N earlier commits").
+Stop. No new work begins until the game plan is acknowledged.
+
+**The first focus item MUST be the `Today's next action:` line from BUILD_PLAN.md, verbatim.** Do not paraphrase, summarize, or rewrite it — that breaks the bookend with the previous session's wrap. If the line is stale or wrong (project shifted, blocker appeared, the user pastes a different recent wrap), surface it verbatim *and then* note the shift as the second focus item. The "Recently shipped" table is a state snapshot of the most recent 3-5 commits, not a session delta — do not label these as "new since last session." If it's been a long gap, summarize older work as one row "...and N earlier commits". *"We made progress"* is never a valid focus item.
 
 **Case B — no `BUILD_PLAN.md` AND user is starting a real project** (asks to build, plan, design, code something new):
 
@@ -167,9 +169,13 @@ Session closed cleanly — [date]. Final state:
 
 **Concrete next action:** in a code block so it's copy-pasteable. Literal command or step, not a vague intention.
 
+**Persist the handoff — REQUIRED.** After writing the wrap to chat, also overwrite `BUILD_PLAN.md`'s `**Today's next action:**` line with the same command/step from the "Concrete next action for tomorrow" block — verbatim or near-verbatim. The chat-transcript wrap is the readable display *for this session*; the BUILD_PLAN.md update is the durable handoff *to the next session*. Chat scrollback dies when the session ends; BUILD_PLAN.md persists. Without this step, tomorrow's Case A has no read-path back to the wrap and the bookend breaks. Include the BUILD_PLAN.md edit in the wrap commit (auto-commit mode is already open since the user triggered the wrap with `ship it` / `done for today`).
+
 **Honest read:** optional. Include only when the session has substance worth reflecting on (caught a bug, shipped something hard, surfaced a key insight). Skip when forced — performative warmth is worse than silence.
 
 **Why this shape — the design intent.** The wrap is a *state snapshot* (where things stand now), not an action log (what shipped — that's the morning's job). Tomorrow-you doesn't need yesterday's commit subjects; git log has those. Tomorrow-you needs to know what's pushed, what's blocking, and the literal next command to run. The format is also part of marble's anti-doubt architecture: concrete state replaces the vague "we made progress" with facts (pairs with the Doubt handler rule), and the honest-read line names real accomplishments explicitly when they exist (counter to the "did I do anything today" spiral).
+
+**Why the BUILD_PLAN.md persistence step exists.** The two halves of the bookend (wrap → morning) live in different storage layers. The wrap's chat output is for the user reading it *now*; the BUILD_PLAN.md update is for tomorrow-Claude reading it *then*. They must talk through a layer that survives the session boundary — chat scrollback doesn't, BUILD_PLAN.md does. The morning's existing read of BUILD_PLAN.md (Case A step 1) then picks up the handoff verbatim and surfaces it as the first focus item. Skip the persistence step and the morning silently falls back to whatever stale text was last in BUILD_PLAN.md.
 
 ## Red Flags — STOP
 
@@ -183,6 +189,8 @@ Session closed cleanly — [date]. Final state:
 | "I'll hold the build plan in my head" | Build plan is the file. Update it. |
 | "Vague commit message is fine just this once" | The git log is the project narrative. Tag every commit. |
 | "I'll skip the brainstorming/TDD handoff just this time" | The routing table is not optional. Route, then work. |
+| "I'll write the wrap to chat and skip the BUILD_PLAN.md update" | Chat scrollback dies between sessions. The morning can only read BUILD_PLAN.md. Persist the handoff or the bookend breaks. |
+| "I'll paraphrase BUILD_PLAN.md's `Today's next action:` line in the morning" | Paraphrasing breaks the bookend. Surface it verbatim — if it's stale, note the shift as a second focus item, don't silently rewrite. |
 
 ## Templates
 

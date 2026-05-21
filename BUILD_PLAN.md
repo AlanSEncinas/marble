@@ -30,6 +30,7 @@
 - [x] Confirm auto-fire works after the description fix (manual test by Alan) — Starmap, 2026-05-12
 - [x] Rebrand: `phase-driven-shipping` → `marble` — files + directory + GitHub repo + remote all renamed; commit `1225493` (2026-05-12)
 - [x] After rename: verify `marble` fires under its new name in a fresh session — confirmed 2026-05-12
+- [x] Bookend persistence fix: wrap rule now mandates writing the "Concrete next action for tomorrow" into BUILD_PLAN.md's `Today's next action:` line; Case A morning surfaces that line verbatim; "Shipped since last session" column renamed to "Recently shipped". Caught live this session when the morning produced a plausible-but-wrong game plan. CLAUDE.md §5 has full diagnosis. (2026-05-20)
 - [ ] Add a "Quickstart" section to README with a real example session (operator types → skill responds with Today's Game Plan → operator types "commit" → skill commits + updates docs). New README is identity/story-focused; Quickstart is the missing operational walkthrough.
 - [ ] Add screenshots or a short asciinema-style transcript to README so the experience is visible before install
 - [ ] Flip GitHub repo public when polish is complete

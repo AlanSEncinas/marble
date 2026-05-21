@@ -1,6 +1,6 @@
 # CLAUDE.md — marble (skill development workspace)
 
-> Auto-loaded by Claude Code when you open a session in this directory. Distinct from any project that *uses* the skill — this is the workspace where we *develop and maintain* it. Last updated: 2026-05-12.
+> Auto-loaded by Claude Code when you open a session in this directory. Distinct from any project that *uses* the skill — this is the workspace where we *develop and maintain* it. Last updated: 2026-05-20.
 
 ---
 
@@ -50,6 +50,23 @@ The skill is auto-discovered by Claude Code via its description — it lists "Us
 ---
 
 ## 5. Recently shipped
+
+**2026-05-20 — `Layer 2 fix`: bookend persistence — wrap→morning handoff now writes through BUILD_PLAN.md**
+- Real-session bug caught live. Opening turn of this session, marble's Case A morning produced a plausible-looking game plan that completely missed the actual handoff: the previous session's wrap (in chat scrollback) had a literal "Concrete next action for tomorrow" in a copy-pasteable code block, but the new session had no read-path back to it. I dutifully read BUILD_PLAN.md / git log / memory (the three sources Case A pointed me at) and surfaced a paraphrased stale "Today's next action:" line from BUILD_PLAN.md as if it were today's focus. Alan caught it ("this isn't correct"), pasted yesterday's actual wrap screenshot, and asked what was wrong in the code.
+- Three connected defects in SKILL.md, all real:
+  - **D1: The wrap → morning handoff was unwritten anywhere readable.** The wrap rule (shipped earlier today in `d4427c2`) put "Concrete next action for tomorrow" in chat only. Chat dies between sessions; the morning has no access to it. The two halves of the bookend literally lived in different storage layers.
+  - **D2: Case A didn't surface the handoff even if it had existed.** Step 1 said "Read `BUILD_PLAN.md` — what phase / current task?" — vague enough that I paraphrased rather than surfacing the `Today's next action:` line verbatim.
+  - **D3: "Shipped since last session" had no session-boundary signal.** The rule asked me to filter for "what's actually new since last session" without providing any mechanism to know where last session ended. On a fresh-morning thread with zero new commits, the table mechanically fell back to "most recent 3-5 commits" and mislabeled prior-session work as new.
+- **Fix applied — six edits total in SKILL.md, plus this CLAUDE.md entry and a BUILD_PLAN.md tickbox:**
+  - Case A step 1 rewritten: explicit instruction to read `Today's next action:` line verbatim, with cross-reference to the wrap rule explaining why.
+  - Case A output template: column renamed `Shipped since last session` → `Recently shipped` (state, not delta), and first focus item must be the verbatim handoff line, bold.
+  - Case A trailing paragraph: "do not paraphrase" mandate is now explicit; if the handoff is stale, surface verbatim *and* note the shift as second focus item (don't silently rewrite); "Recently shipped" framing made explicit as snapshot-not-delta.
+  - Wrap rule: new "**Persist the handoff — REQUIRED**" block mandates overwriting BUILD_PLAN.md's `Today's next action:` line with the wrap's concrete next action, in the same commit as the wrap. Explains why (chat dies, BUILD_PLAN.md persists).
+  - Wrap "Why this shape" extended with a second paragraph naming the bookend-via-BUILD_PLAN.md design — two halves of the bookend talk through BUILD_PLAN.md, not chat.
+  - Red Flags table: two new rows ("write the wrap to chat and skip the BUILD_PLAN.md update", "paraphrase the `Today's next action:` line").
+- **RED data:** the failure was live, observable, in this session. Alan-as-user comparing the output to his actual wrap screenshot and explicitly asking "something has to be wrong in the code" is the strongest possible RED signal — exactly the same pattern as `00f0a7e` (A1+A2 rules from other-Claude real-session feedback). No subagent baseline run because the live in-the-wild failure is better evidence than any synthetic test. Marble's track record: real-session-RED + lived-in-pass-REFACTOR is the established pattern here.
+- **Why this is a rule change, not a format change:** unlike the 2026-05-20 UX edits earlier today (table layouts), this changes *what the rules say to do* — Case A acquires a verbatim-surface mandate, the wrap acquires a mandatory persistence step. Per the established split, rule changes route through `superpowers:writing-skills` (invoked); format edits don't.
+- **REFACTOR plan:** lived-in pass through next several real-session morning/wrap cycles. Watch for new rationalizations ("the line in BUILD_PLAN.md is *obviously* stale, I'll just rewrite it" is the predicted next loophole). If observed → add to Red Flags table.
 
 **2026-05-20 — `Layer 2 UX`: session wrap becomes a state snapshot (supersedes wrap portion of earlier entry today)**
 - Refined the session-wrap format spec within the same session it was first added — same-day RED-GREEN-REFACTOR cycle. Earlier entry today (commit `0450e0e`) shipped a "Change / Where" wrap table that listed commits. Alan saw it, then pasted a screenshot from a different session showing the format he actually wanted: an "Item / Status" *state snapshot* (branch, tests, gates, artifacts, frozen state) + concrete next action in a code block + optional honest-read closing line. Strongest possible RED signal: the user explicitly comparing my output to his preferred reference and pointing at the gap.
