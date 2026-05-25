@@ -1,6 +1,6 @@
 ---
 name: marble
-description: Use when starting any conversation — REQUIRED to invoke before any other response, including clarifying questions. Also use when user says "commit" / "done for today" / "ship it", when new ideas surface mid-phase, when user expresses self-doubt about progress, or before ending a work session.
+description: Use when starting any conversation — REQUIRED to invoke via the Skill tool on the first model response, before generating any text, before reading any IDE-opened files, and before asking any clarifying question. Also use when user says "hi" / "hello" / "morning" / "commit" / "done for today" / "ship it", when new ideas surface mid-phase, when user expresses self-doubt about progress, or before ending a work session.
 ---
 
 # Marble

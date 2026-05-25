@@ -51,6 +51,18 @@ The skill is auto-discovered by Claude Code via its description — it lists "Us
 
 ## 5. Recently shipped
 
+**2026-05-25 — `Layer 2`: harden marble description to close first-turn bypass routes (preemptive tightening after a week of lived-in usage)**
+- Context: the 5/20 changes (`0d057aa` bookend persistence, `8ab728e` onboarding pass with Case B announce-and-act, `80f9e18` README refresh) shipped just before a multi-day testing window. The 5/20 wrap's handoff was "test the patches in real projects; patch marble first thing if lived-in usage surfaces a rule gap." A week of lived-in usage followed and marble fired correctly. No current bug.
+- Took the opportunity to preemptively close two rationalization routes the model could theoretically take on edge-case openers (one-word greetings + visible IDE files), even though no current failure was forcing them.
+- **Three structural edits to the description (SKILL.md frontmatter line 3, only):**
+  1. **Lead with the strongest instruction.** Moved the strict invocation requirement to the front: "REQUIRED to invoke via the Skill tool on the first model response, before generating any text". Closes the bypass route where "starting any conversation" can get interpreted as a soft trigger that waits until intent is clear.
+  2. **Forbid the file-read-before-skill-check shortcut explicitly.** Added "before reading any IDE-opened files". Closes the route where IDE context with a visible project file could bias the model toward direct engagement instead of skill check.
+  3. **Greeting trigger words added.** "hi" / "hello" / "morning" added to the explicit trigger-word list alongside the existing "commit" / "done for today" / "ship it". Gives the model substring-match paths to fire marble on casual openers.
+- **What we deliberately did NOT touch:** the body of SKILL.md (Today's Game Plan rule, Case A/B/C dispatch, routing table, all other rules). Description-only edit; behavior of marble once fired is unchanged.
+- **Verification:** Alan ran a cold-restart repro (full Claude Code exit, fresh project dir with one `idea.md`, typed "hi"). Marble fired Case B announce-and-act before any other response. GREEN confirmed the tightened description still triggers correctly in the working case; rationalization-route closures don't change observable behavior in cases that were already working.
+- **`superpowers:writing-skills` invoked** per marble's routing rule that description changes ARE rule changes. RED was hypothetical bypass routes the previous description left open; GREEN was the post-edit cold-restart test.
+- **Process note for future me:** during this session I temporarily mistook an old screenshot from earlier in the week for a fresh real-session failure and built an unnecessary systematic-debugging arc around it. The description tightening landed anyway and was verified working, so the file edits stayed. The §5 entry above was rewritten from the misframed "fresh bug caught today" framing to this honest preemptive-hardening framing before the commit went out. Lesson: when a user shares a screenshot, ask explicitly *when* it was captured before treating it as live evidence.
+
 **2026-05-20 — `Layer 2 docs`: README copy refresh — Today's Game Plan + Session close + "three files" sections now reflect today's shipped behavior**
 - Closing the open item flagged in the previous §5 entry ("README.md lines 21 + 31 still describe the bookend in older terms"). Alan said "update readme and then push" — explicit directive to finalize the README pass before publishing today's commits.
 - Three surgical edits in README.md:
