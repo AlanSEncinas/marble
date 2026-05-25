@@ -3,7 +3,12 @@
 > Forward-looking source of truth for what ships next on the skill itself. Update checkboxes in the same commit as the work. See `CLAUDE.md` §5 for backward-looking changelog. See `BACKLOG.md` for ideas not in the current layer.
 
 **Current phase:** Layer 2 — Stability & Adoption
-**Today's next action:** Open Claude Code in any active project with a `BUILD_PLAN.md` (e.g., Trend Tents orchestrator). Verify the patched Case A morning surfaces the `Today's next action:` line **verbatim, not paraphrased**, and that the bookend bridge works end-to-end (yesterday's wrap line is what shows up as today's first focus item). Also pressure-test the new Case B announce-and-act behavior in a fresh-project dir. If lived-in usage surfaces a rule gap or wording defect, patch marble first thing — same RED → GREEN pattern we ran today (3 commits: `0d057aa` bookend persistence, `8ab728e` onboarding pass, `80f9e18` README refresh).
+**Today's next action:** Continue lived-in pass — use marble in active projects (Trend Tents orchestrator, others) to pressure-test both 5/25 ships across another testing window:
+
+- `29315ee` — description hardening (preemptive close of first-turn bypass routes: front-loaded REQUIRED-invoke language, forbid IDE-file-read shortcut, add hi/hello/morning trigger words)
+- `4653c1d` — marketplace-ready README expansion (4-act Quickstart walkthrough, Memory integration bullet, save-points reframe, Who-this-is-for / NOT-for framing)
+
+If friction or rule gaps surface in lived-in usage → patch marble first thing using the same RED → GREEN pattern. If clean across the testing window → decide on flipping `github.com/AlanSEncinas/marble` public, which removes the install-only-works-for-Alan barrier and unblocks the last open Layer 2 done-definition gate (one external user). Process note for tomorrow-Claude: when reviewing screenshots, ask explicitly *when* they were captured before treating them as live evidence (lesson from today's phantom-debugging arc; see CLAUDE.md §5 for 29315ee).
 
 ---
 
