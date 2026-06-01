@@ -3,12 +3,7 @@
 > Forward-looking source of truth for what ships next on the skill itself. Update checkboxes in the same commit as the work. See `CLAUDE.md` §5 for backward-looking changelog. See `BACKLOG.md` for ideas not in the current layer.
 
 **Current phase:** Layer 2 — Stability & Adoption
-**Today's next action:** Continue lived-in pass — use marble in active projects (Trend Tents orchestrator, others) to pressure-test both 5/25 ships across another testing window:
-
-- `29315ee` — description hardening (preemptive close of first-turn bypass routes: front-loaded REQUIRED-invoke language, forbid IDE-file-read shortcut, add hi/hello/morning trigger words)
-- `4653c1d` — marketplace-ready README expansion (4-act Quickstart walkthrough, Memory integration bullet, save-points reframe, Who-this-is-for / NOT-for framing)
-
-If friction or rule gaps surface in lived-in usage → patch marble first thing using the same RED → GREEN pattern. If clean across the testing window → decide on flipping `github.com/AlanSEncinas/marble` public, which removes the install-only-works-for-Alan barrier and unblocks the last open Layer 2 done-definition gate (one external user). Process note for tomorrow-Claude: when reviewing screenshots, ask explicitly *when* they were captured before treating them as live evidence (lesson from today's phantom-debugging arc; see CLAUDE.md §5 for 29315ee).
+**Today's next action:** Check whether marble landed in the community marketplace catalog (~week of 6/7/26): search `github.com/anthropics/claude-plugins-community/blob/main/.claude-plugin/marketplace.json` for "marble". If present → run the live smoke test (`/plugin marketplace add anthropics/claude-plugins-community` then `/plugin install marble@claude-community` in a fresh Claude Code, confirm it fires). If absent after ~a week → consider poking Anthropic support. Submitted 5/31/26; review timeline is undocumented (estimate a few days + nightly catalog sync). Note: submission shipped the dev-workspace files (CLAUDE.md/BUILD_PLAN.md/BACKLOG.md) inside the plugin — harmless, but if review flags marketplace hygiene, the fix is excluding those three from what ships.
 
 ---
 
