@@ -1,22 +1,22 @@
 # Marble
 
-A Claude Code skill that keeps development sessions anchored to one phase at a time.
+A Claude Code skill that keeps you on one phase instead of the whole project.
 
-Projects start small and clear — a marble. Then they grow: more context, more edge cases, more possibilities, until you're holding a galaxy and the thread gets hard to track. Marble keeps each session anchored to the current phase so scope creep and session-to-session amnesia don't stall the work.
+Projects start small — a marble. Then they grow into a galaxy and you lose the thread. Marble stops that. Every session stays anchored to the current phase, ideas get parked instead of chased, and the work actually ships.
 
-I built it for my own projects. I run a solo manufacturing operation across 14 markets and build software alongside it — multi-agent sales systems, mobile apps, ML pipelines. The recurring failure mode was the same every time: get deep into a project, lose the thread, and stall. Marble is the structure that keeps that from happening.
+I run a manufacturing operation across 14 markets and build software on the side — sales agents, mobile apps, ML pipelines. I kept losing the thread on my own projects and stalling. So I built the thing that keeps me moving.
 
 ---
 
-**Marble** is a universal Claude Code skill that acts as a conductor for your development sessions. It keeps you in the current phase, captures ideas without breaking flow, commits with discipline, and counters self-doubt with actual project metrics instead of empty validation. Underneath, it adds two things AI sessions typically lack: durable save points on disk that bridge every session, and a structured memory layer that remembers you, your projects, and how you work.
+Marble runs the session. It keeps you in the current phase, parks ideas without breaking flow, commits with discipline, and answers self-doubt with your actual numbers instead of empty validation. It also adds two things AI sessions don't have on their own: save points on disk that survive between sessions, and a memory layer that remembers you, your projects, and how you work.
 
-It builds on the [superpowers](https://agentskills.io) skill suite for the engineering work and adds the human layer on top: the session structure, the backlog triage, the doubt interruption, and the marble-not-galaxy discipline that keeps complexity from becoming paralysis.
+The engineering work runs on the [superpowers](https://agentskills.io) skill suite. Marble is the layer on top — session structure, backlog triage, doubt interruption, and the marble-not-galaxy rule that keeps complexity from becoming paralysis.
 
 ### Who this is for
 
-Marble is built for **solo operators and small teams shipping real work** — builders with actual projects (apps, ML pipelines, internal tools, businesses) who keep losing the thread to scope creep, doubt, or session-to-session amnesia.
+**Solo operators and small teams shipping real work** — people with actual projects (apps, ML pipelines, internal tools, businesses) who keep losing the thread to scope creep, doubt, or forgetting where they left off.
 
-It's not for fully autonomous coding agents (marble doesn't write code — it routes you to the engineering skills that do), enterprise dev orgs with mature project management already in place, or anyone wanting a kanban board (BACKLOG.md is a triage destination, not a workflow visualization).
+Not for: fully autonomous coding agents (marble doesn't write code, it routes you to the skills that do), big dev orgs that already have project management, or anyone looking for a kanban board (BACKLOG.md is a triage destination, not a board).
 
 ### What it does
 
