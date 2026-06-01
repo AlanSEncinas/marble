@@ -141,23 +141,39 @@ That's the loop. Open → orient → work → wrap → open → orient. Every se
 
 ### Install
 
-**macOS / Linux:**
+**As a plugin (recommended).** In Claude Code, add the marble marketplace and install:
+```
+/plugin marketplace add AlanSEncinas/marble
+/plugin install marble@alan-encinas-plugins
+```
+
+Once marble is in Anthropic's community marketplace, you can also install it from there:
+```
+/plugin marketplace add anthropics/claude-plugins-community
+/plugin install marble@claude-community
+```
+
+**As a bare skill (clone).** Drop it straight into your skills folder — no plugin system needed:
+
+macOS / Linux:
 ```bash
 cd ~/.claude/skills
 git clone https://github.com/AlanSEncinas/marble.git
 ```
 
-**Windows (PowerShell):**
+Windows (PowerShell):
 ```powershell
 cd "$env:USERPROFILE\.claude\skills"
 git clone https://github.com/AlanSEncinas/marble.git
 ```
 
+Either way, restart Claude Code and marble fires on your next session.
+
 Requires Claude Code. Pairs with the [superpowers](https://agentskills.io) plugin for the engineering handoffs — marble works standalone, but brainstorming, planning, TDD, debugging, and verification fall back to model defaults instead of the disciplined superpowers versions. Install both for the full experience.
 
 ### Adapting it
 
-Fork it. Edit SKILL.md to match your voice, your projects, your spiral patterns. The doubt handler examples are mine — replace them with your numbers. The routing table is opinionated — add rows for your workflow. The templates are starting points. Make them yours.
+Fork it. Edit SKILL.md to match your voice, your projects, your workflow. The doubt handler examples are mine — replace them with your numbers. The routing table is opinionated — add rows for how you work. The templates are starting points. Make them yours.
 
 ### Contributing
 

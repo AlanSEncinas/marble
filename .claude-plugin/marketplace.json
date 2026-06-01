@@ -1,0 +1,18 @@
+{
+  "name": "alan-encinas-plugins",
+  "owner": {
+    "name": "Alan Encinas",
+    "url": "https://github.com/AlanSEncinas"
+  },
+  "metadata": {
+    "description": "Plugins by Alan Encinas. Home of marble — a Claude Code skill for staying on one phase instead of the whole project."
+  },
+  "plugins": [
+    {
+      "name": "marble",
+      "source": "./",
+      "description": "Keeps you on one phase instead of the whole project. Session bookends, BACKLOG triage, commit discipline, a doubt handler, and durable on-disk save points. Routes engineering work to the superpowers suite.",
+      "version": "1.0.0"
+    }
+  ]
+}

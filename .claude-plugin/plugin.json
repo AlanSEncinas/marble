@@ -1,0 +1,19 @@
+{
+  "name": "marble",
+  "description": "Keeps you on one phase instead of the whole project. Session bookends (Today's Game Plan + state-snapshot wrap), BACKLOG triage, phase-prefixed commit discipline, a doubt handler that answers self-doubt with real metrics, and durable on-disk save points. Routes engineering work to the superpowers suite.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Alan Encinas",
+    "url": "https://github.com/AlanSEncinas"
+  },
+  "homepage": "https://github.com/AlanSEncinas/marble",
+  "repository": "https://github.com/AlanSEncinas/marble",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "session-management",
+    "project-management",
+    "workflow",
+    "solo-developer"
+  ]
+}
