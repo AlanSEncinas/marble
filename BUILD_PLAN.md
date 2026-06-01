@@ -40,9 +40,7 @@ If friction or rule gaps surface in lived-in usage → patch marble first thing 
 - [x] README copy refresh: Today's Game Plan, Session close, and "three files" sections now reflect today's shipped behavior (table-and-bullets format, state-snapshot wrap, BUILD_PLAN.md persistence, four session-start trigger phrases, announce-and-act bootstrap). Operational Quickstart still pending separately. (2026-05-20)
 - [x] Description hardening (preemptive): tightened SKILL.md description to (1) lead with strongest instruction (REQUIRED to invoke on first model response, before generating any text), (2) explicitly forbid the file-read-before-skill-check shortcut (before reading any IDE-opened files), (3) add greeting trigger words ("hi" / "hello" / "morning") inline. Closes two rationalization routes the model could theoretically take on edge-case openers; verified via cold-restart repro after a week of lived-in usage confirmed marble was already firing correctly. CLAUDE.md §5 has full context. (2026-05-25)
 - [x] Add a "Quickstart" section to README with a real example session — shipped as part of the 2026-05-25 marketplace-readiness README expansion (Path B). Four-act walkthrough across two days: Day 1 morning bootstrap → mid-session idea triage → evening wrap → Day 2 morning handoff pickup. Also added Who-this-is-for / NOT-for framing, Memory integration bullet, renamed "The three files" → "The save points" + reframed lead. CLAUDE.md §5 has full context. (2026-05-25)
-- [ ] Add screenshots or a short asciinema-style transcript to README so the experience is visible before install
 - [ ] Flip GitHub repo public when polish is complete
-- [ ] Publish the website blog post + LinkedIn post (drafts exist outside repo, holding until public re-launch)
 - [ ] Get one external user to install and run a session — collect feedback on (a) does it fire, (b) is Today's Game Plan valuable, (c) any friction points
 - [ ] Address top friction point from external feedback
 
@@ -67,7 +65,7 @@ If friction or rule gaps surface in lived-in usage → patch marble first thing 
 
 - **Current demo:** Install via `git clone https://github.com/AlanSEncinas/marble.git` into `~/.claude/skills/`, restart Claude Code, observe the skill firing. New README (marble-vs-galaxy story + features) is the static demo. Repo is private while polishing — install command works only for Alan until flipped public.
 - **Last verified working:** 2026-05-12 (auto-fire confirmed in Starmap fresh-project test under the old name; post-rename verification pending after directory + repo rename)
-- **Gap:** No video / asciinema / animated GIF showing the experience. Layer 2 task. Also no operational Quickstart in README — only the story/identity copy.
+- **Demo coverage:** Operational Quickstart in README (4-act walkthrough, shipped 5/25/26) is the text demo. Visual demo (screenshot/GIF/asciinema) deliberately dropped from scope — text Quickstart covers the "what does using marble look like" question for marketplace browsers.
 
 ---
 
@@ -76,4 +74,4 @@ If friction or rule gaps surface in lived-in usage → patch marble first thing 
 > One-line summary when a layer fully ships. Detail moves to `CLAUDE.md` §5.
 
 - _Layer 1 — Foundation: SHIPPED 2026-05-12._ Public-shape repo exists, skill installs cleanly, skill auto-fires reliably (verified via Starmap fresh-project test). Layer 1 done definition met.
-- _Layer 2 — Stability & Adoption: IN PROGRESS._ Rebrand to `marble` shipped (`1225493`, 2026-05-12) and verified firing under the new name; Quickstart, screenshots, public-flip, and external user feedback still pending.
+- _Layer 2 — Stability & Adoption: IN PROGRESS._ Rebrand to `marble` shipped (`1225493`, 2026-05-12) and verified firing under the new name; Quickstart shipped (5/25/26); public-flip and external user feedback still pending.
