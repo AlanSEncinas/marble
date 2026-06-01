@@ -1,14 +1,10 @@
 # Marble
 
-A Claude Code skill for builders who spiral.
+A Claude Code skill that keeps development sessions anchored to one phase at a time.
 
-You know the feeling. You start with a marble — small, clear, you can see every angle of it. You're excited. Then it grows. More context, more edge cases, more possibilities. It becomes a galaxy. And suddenly you can't hold the full shape of it anymore. The momentum dies. The doubt moves in. Somewhere between the marble and the galaxy, you stop.
+Projects start small and clear — a marble. Then they grow: more context, more edge cases, more possibilities, until you're holding a galaxy and the thread gets hard to track. Marble keeps each session anchored to the current phase so scope creep and session-to-session amnesia don't stall the work.
 
-I built this skill because I was the problem I kept running into.
-
-I'm a solo operator running an international manufacturing company across 14 markets. I build real things alongside that — multi-agent sales systems, mobile apps, ML pipelines. But I kept hitting the same wall: get deep enough into a project, lose the thread, spiral into "is this even worth it," and stall out. The work was real. The self-doubt wasn't. I just couldn't tell the difference in the moment.
-
-So I built a skill that could.
+I built it for my own projects. I run a solo manufacturing operation across 14 markets and build software alongside it — multi-agent sales systems, mobile apps, ML pipelines. The recurring failure mode was the same every time: get deep into a project, lose the thread, and stall. Marble is the structure that keeps that from happening.
 
 ---
 
@@ -24,19 +20,19 @@ It's not for fully autonomous coding agents (marble doesn't write code — it ro
 
 ### What it does
 
-**Today's Game Plan.** Every session opens with a quick orientation — recent shipped work in a table, plus your next action picked up verbatim from the previous session's wrap. No new work starts until that's acknowledged. Start any session by typing `hello`, `morning`, `morning [date]`, or `hi today is [date]` — any of those triggers the game plan. It sounds simple. It changes everything.
+**Today's Game Plan.** Every session opens with a quick orientation — recent shipped work in a table, plus your next action picked up verbatim from the previous session's wrap. No new work starts until that's acknowledged. Start any session by typing `hello`, `morning`, `morning [date]`, or `hi today is [date]` — any of those triggers the game plan. It's a small ritual that keeps every session oriented before work starts.
 
-**Phase discipline.** Work splits into explicit layers with done definitions. New ideas that surface mid-session get triaged to a backlog instead of opening a second front. You stay on the marble. The galaxy waits.
+**Phase discipline.** Work splits into explicit layers with done definitions. New ideas that surface mid-session get triaged to a backlog instead of opening a second front. You stay on the current phase; the rest waits.
 
 **Trigger-word commits.** Say "commit", "done for today", or "ship it" once. Auto-commit mode opens for the full session. Phase-prefixed messages, matching doc updates, no re-asking. The git log becomes a project narrative.
 
-**Doubt handler.** When you say "this won't work" or "nobody cares" or "should I bother" — the skill doesn't validate you. It pulls up the actual numbers. Your model hit 0.84 mIoU. Your cost dropped from $49 to $1.67. The work is real. Keep going.
+**Doubt handler.** When you say "this won't work" or "nobody cares" or "should I bother" — the skill doesn't validate you. It pulls up the actual numbers. Your model hit 0.84 mIoU. Your cost dropped from $49 to $1.67. Concrete metrics instead of empty validation, then back to the next action.
 
 **Backlog triage.** Mid-phase idea? Acknowledged in one line, logged to BACKLOG.md, session continues. The idea doesn't disappear. The current phase doesn't either.
 
 **Memory integration.** The skill writes durable memories about you (your role, working style, ambitions), your projects (goals, in-flight decisions, why-this-not-that), and your feedback patterns (what to avoid, what worked). Code and recent changes don't go to memory — those live in the files and in git. Memory is for what *isn't* in the files: who you are, what you're trying to do, how you want to collaborate. Sessions started months apart pick up like one continuous one.
 
-**Session close.** Type `done for today` or `ship it` and the skill writes a state snapshot — what's pushed, what's frozen, what's blocked — plus a concrete next action for tomorrow that gets persisted into your `BUILD_PLAN.md` so the next session picks it up verbatim. The two halves of the session bookend bridge through that file. "We made good progress" is not a valid close. Ambiguity feeds doubt.
+**Session close.** Type `done for today` or `ship it` and the skill writes a state snapshot — what's pushed, what's frozen, what's blocked — plus a concrete next action for tomorrow that gets persisted into your `BUILD_PLAN.md` so the next session picks it up verbatim. The two halves of the session bookend bridge through that file. "We made good progress" is not a valid close — the next action has to be concrete.
 
 ### The save points
 
