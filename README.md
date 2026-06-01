@@ -4,8 +4,6 @@ A Claude Code skill that keeps you on one phase instead of the whole project.
 
 Projects start small — a marble. Then they grow into a galaxy and you lose the thread. Marble stops that. Every session stays anchored to the current phase, ideas get parked instead of chased, and the work actually ships.
 
-I run a manufacturing operation across 14 markets and build software on the side — sales agents, mobile apps, ML pipelines. I kept losing the thread on my own projects and stalling. So I built the thing that keeps me moving.
-
 ---
 
 Marble runs the session. It keeps you in the current phase, parks ideas without breaking flow, commits with discipline, and answers self-doubt with your actual numbers instead of empty validation. It also adds two things AI sessions don't have on their own: save points on disk that survive between sessions, and a memory layer that remembers you, your projects, and how you work.
